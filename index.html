@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Premium</title>
+    <style>
+        /* === ESTILOS DELICADOS INTEGRADOS === */
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: #f8f9fa; /* Gris muy suave */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centra todo */
+            padding: 20px;
+            margin: 0;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-weight: 300;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+
+        /* DISEÑO DE TARJETA DE VIDEO */
+        .video-delicado {
+            width: 100%;
+            max-width: 300px;       /* Medida exacta para que no se vea tosco */
+            border-radius: 20px;    /* Bordes bien redondeados */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Sombra suave y moderna */
+            background: #000;
+            display: block;
+            object-fit: cover;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>MI CATÁLOGO</h1>
+
+    <video class="video-delicado" controls controlsList="nodownload">
+        <source src="video.mp4" type="video/mp4">
+        Tu navegador no soporta video.
+    </video>
+
+</body>
+</html>
