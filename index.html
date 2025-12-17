@@ -28,7 +28,7 @@
         /* --- HEADER --- */
         header {
             background: linear-gradient(to right, #000 0%, #1a1a1a 100%);
-            padding: 25px 0;
+            padding: 35px 0; /* Un poco más alto para que luzca el logo */
             border-bottom: 4px solid var(--verde-manzana);
             text-align: center;
             position: sticky;
@@ -36,21 +36,39 @@
             z-index: 100;
             box-shadow: 0 4px 15px rgba(0,0,0,0.8);
         }
+
+        /* --- AQUI ESTÁ EL CAMBIO DE LAS BANDERAS --- */
         .logo {
-            font-size: 2.2rem;
+            font-size: 2.8rem; /* Letra más grande e impactante */
             font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            color: white;
+            letter-spacing: 3px;
+            display: inline-block;
+            
+            /* EFECTO FUSIÓN DE BANDERAS POR CÓDIGO */
+            /* Celeste (Arg) -> Blanco -> Rojo (USA) -> Azul (USA) */
+            background: linear-gradient(90deg, #74ACDF 0%, #FFFFFF 40%, #B22234 60%, #3C3B6E 100%);
+            
+            /* Esto hace que el fondo se meta DENTRO de las letras */
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent; 
+            
+            /* Una sombra muy sutil para que se lea bien sobre negro */
+            filter: drop-shadow(0 2px 0px rgba(255,255,255,0.15));
         }
-        .logo span { color: var(--verde-manzana); }
+
+        /* Hacemos que "JB" también tome los colores de la bandera */
+        .logo span { 
+            color: inherit; 
+        }
 
         /* --- CONTENEDOR CENTRAL (INFO EMPRESA) --- */
         .container-central {
-            max-width: 1000px; /* Ancho controlado para lectura cómoda */
+            max-width: 1000px; 
             margin: 50px auto;
             padding: 0 20px;
-            text-align: center; /* Todo centrado para elegancia */
+            text-align: center; 
         }
 
         .empresa-titulo {
@@ -111,7 +129,7 @@
             flex-wrap: wrap;
             gap: 30px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.4);
-            text-align: left; /* Contenido interno alineado a la izquierda */
+            text-align: left; 
         }
         .box-col-servicios ul { list-style: none; padding: 0; margin: 0; }
         .box-col-servicios li { margin-bottom: 10px; font-size: 1rem; }
@@ -328,287 +346,4 @@
                 <span class="tel-item"><i class="fab fa-whatsapp"></i> 2665-045062</span>
             </div>
             <div class="box-col-mapa">
-                <img src="1000951603.jpg" alt="Mapa pequeño" class="mapa-img">
-                <div style="font-size:0.7rem; color:var(--verde-manzana); margin-top:5px; text-align:center; font-weight:bold;">ENVÍOS AL PAÍS</div>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="seccion-videos">
-        <div class="container-videos">
-            <h3 class="titulo-videos">Demostraciones en Video</h3>
-            <div class="grid-videos-horizontal">
-                
-                <div class="video-card">
-                    <video controls controlsList="nodownload"><source src="1000951601.mp4" type="video/mp4"></video>
-                    <div class="video-titulo">Sierra Milwaukee</div>
-                </div>
-                
-                <div class="video-card">
-                    <video controls controlsList="nodownload"><source src="1000951575.mp4" type="video/mp4"></video>
-                    <div class="video-titulo">WRD Bison Oferta</div>
-                </div>
-                
-                <div class="video-card">
-                    <video controls controlsList="nodownload"><source src="1000951617.mp4" type="video/mp4"></video>
-                    <div class="video-titulo">Sistema Spider 4</div>
-                </div>
-                
-                <div class="video-card">
-                    <video controls controlsList="nodownload"><source src="1000951583.mp4" type="video/mp4"></video>
-                    <div class="video-titulo">Delta Kits Promo</div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="catalogo-section">
-        <h2 class="cat-title">Catálogo <span>Profesional</span></h2>
-        
-        <div class="grid-productos">
-            
-            <div class="card">
-                <div class="card-img"><img src="1000951623.jpg" alt="WRD Spider 4"><span class="badge-new">TOP</span></div>
-                <div class="card-body">
-                    <h3>WRD Spider 4 Kit</h3>
-                    <p>Sistema completo de extracción por fibra.</p>
-                    <a href="https://wa.me/5492664485823?text=Consulta%20Spider%204" class="btn-wsp">Consultar</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img"><img src="1000951619.jpg" alt="WRD Bison"></div>
-                <div class="card-body">
-                    <h3>WRD Bison</h3>
-                    <p>Herramienta manual de corte por hilo.</p>
-                    <a href="https://wa.me/5492664485823?text=Consulta%20Bison" class="btn-wsp">Consultar</a>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-img"><img src="1000951602.jpg" alt="GlasWeld Zoom"><span class="badge-new">PRO</span></div>
-                <div class="card-body">
-                    <h3>Kit GlasWeld Zoom</h3>
-                    <p>Inyector al vacío, lámpara UV y maletín.</p>
-                    <a href="https://wa.me/5492664485823?text=Consulta%20Kit%20GlasWeld" class="btn-wsp">Consultar</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img"><img src="1000951580.jpg" alt="Delta Kits"></div>
-                <div class="card-body">
-                    <h3>Kit Delta Profesional</h3>
-                    <p>Sistema completo en bolso azul con puente.</p>
-                    <a href="https://wa.me/5492664485823?text=Consulta%20Kit%20Delta" class="btn-wsp">Consultar</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img"><img src="1000951606.jpg" alt="Equalizer Roja"></div>
-                <div class="card-body">
-                    <h3>Equalizer Visualizer</h3>
-                    <p>Herramienta de corte largo alcance.</p>
-                    <a href="https://wa.me/5492664485823?text=Consulta%20Equalizer" class="btn-wsp">Consultar</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img"><img src="1000951611.jpg" alt="Cuchillo UltraWiz"></div>
-                <div class="card-body">
-                    <h3>Cuchillo UltraWiz</h3>
-                    <p>Cuchillo frío manual de aluminio.</p>
-                    <a href="https://wa.me/5492664485823?text=Consulta%20Cuchillo" class="btn-wsp">Consultar</a>
-                </div>
-            </div>
-            
-             <div class="card">
-                <div class="card-img"><img src="1000951555.jpg" alt="PipeKnife"></div>
-                <div class="card-body">
-                    <h3>PipeKnife XL</h3>
-                    <p>Cuchillo de uretano de largo alcance (18").</p>
-                    <a href="https://wa.me/5492664485823?text=Consulta%20PipeKnife" class="btn-wsp">Consultar</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img"><img src="1000951566.jpg" alt="Ventosas Azules"></div>
-                <div class="card-body">
-                    <h3>Kit Ventosas Pro</h3>
-                    <p>Juego de ventosas de fijación en maletín.</p>
-                    <a href="https://wa.me/5492664485823?text=Consulta%20Ventosas" class="btn-wsp">Consultar</a>
-                </div>
-            </div>
-            
-             <div class="card">
-                <div class="card-img"><img src="1000951604.jpg" alt="Ventosas Naranjas"></div>
-                <div class="card-body">
-                    <h3>Ventosas WRD</h3>
-                    <p>Juego de ventosas naranjas de alta adherencia.</p>
-                    <a href="https://wa.me/5492664485823?text=Consulta%20Ventosas%20WRD" class="btn-wsp">Consultar</a>
-                </div>
-            </div>
-            
-             <div class="card">
-                <div class="card-img"><img src="1000951563.jpg" alt="Ventosa Verde"></div>
-                <div class="card-body">
-                    <h3>Ventosa Individual</h3>
-                    <p>Ventosa verde de gran capacidad.</p>
-                    <a href="https://wa.me/5492664485823?text=Consulta%20Ventosa%20Verde" class="btn-wsp">Consultar</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img"><img src="1000951593.jpg" alt="Crackweld 1000"></div>
-                <div class="card-body">
-                    <h3>Crackweld 1000</h3>
-                    <p>Resina de alta viscosidad para grietas.</p>
-                    <a href="https://wa.me/5492664485823?text=Consulta%20Resina" class="btn-wsp">Consultar</a>
-                </div>
-            </div>
-            
-             <div class="card">
-                <div class="card-img"><img src="1000951588.jpg" alt="Crackweld 2000"></div>
-                <div class="card-body">
-                    <h3>Crackweld 2000</h3>
-                    <p>Resina premium de máxima fuerza.</p>
-                    <a href="https://wa.me/5492664485823?text=Consulta%20Resina" class="btn-wsp">Consultar</a>
-                </div>
-            </div>
-            
-             <div class="card">
-                <div class="card-img"><img src="1000951599.jpg" alt="Amber 2010"></div>
-                <div class="card-body">
-                    <h3>Resina Amber 2010</h3>
-                    <p>Tono ámbar para acabados naturales.</p>
-                    <a href="https://wa.me/5492664485823?text=Consulta%20Resina" class="btn-wsp">Consultar</a>
-                </div>
-            </div>
-            
-             <div class="card">
-                <div class="card-img"><img src="1000951587.jpg" alt="Gray Resin"></div>
-                <div class="card-body">
-                    <h3>Resina Gray</h3>
-                    <p>Formulada para climas cálidos.</p>
-                    <a href="https://wa.me/5492664485823?text=Consulta%20Resina" class="btn-wsp">Consultar</a>
-                </div>
-            </div>
-            
-             <div class="card">
-                <div class="card-img"><img src="1000951600.jpg" alt="Pit Filler"></div>
-                <div class="card-body">
-                    <h3>Pit Filler</h3>
-                    <p>Resina de acabado superficial.</p>
-                    <a href="https://wa.me/5492664485823?text=Consulta%20PitFiller" class="btn-wsp">Consultar</a>
-                </div>
-            </div>
-            
-             <div class="card">
-                <div class="card-img"><img src="1000951585.jpg" alt="Magnibond"></div>
-                <div class="card-body">
-                    <h3>Magnibond</h3>
-                    <p>Resina Delta Kits viscosidad media.</p>
-                    <a href="https://wa.me/5492664485823?text=Consulta%20Magnibond" class="btn-wsp">Consultar</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img"><img src="1000951608.jpg" alt="Cuchillas Standard"></div>
-                <div class="card-body">
-                    <h3>Cuchillas UltraWiz</h3>
-                    <p>Pack estándar de 1 pulgada.</p>
-                    <a href="https://wa.me/5492664485823?text=Consulta%20Cuchillas" class="btn-wsp">Consultar</a>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-img"><img src="1000951610.jpg" alt="Cuchillas Serradas"></div>
-                <div class="card-body">
-                    <h3>Cuchillas Serradas</h3>
-                    <p>Pack Radius Serrated UltraWiz.</p>
-                    <a href="https://wa.me/5492664485823?text=Consulta%20Serradas" class="btn-wsp">Consultar</a>
-                </div>
-            </div>
-
-             <div class="card">
-                <div class="card-img"><img src="1000951609.jpg" alt="Cuchillas Angulares"></div>
-                <div class="card-body">
-                    <h3>Cuchillas Angulares</h3>
-                    <p>Diseño en ángulo para cortes difíciles.</p>
-                    <a href="https://wa.me/5492664485823?text=Consulta%20Angulares" class="btn-wsp">Consultar</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img"><img src="1000951595.jpg" alt="Lampara UV"></div>
-                <div class="card-body">
-                    <h3>Lámpara UV</h3>
-                    <p>Curado con ventosas de fijación.</p>
-                    <a href="https://wa.me/5492664485823?text=Consulta%20Lampara" class="btn-wsp">Consultar</a>
-                </div>
-            </div>
-            
-             <div class="card">
-                <div class="card-img"><img src="1000951579.jpg" alt="Kit Opticas"></div>
-                <div class="card-body">
-                    <h3>Restauración Ópticas</h3>
-                    <p>Kit Infinity para pulido de faros.</p>
-                    <a href="https://wa.me/5492664485823?text=Consulta%20Opticas" class="btn-wsp">Consultar</a>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-img"><img src="1000951586.jpg" alt="Laminas Curado"></div>
-                <div class="card-body">
-                    <h3>Láminas de Curado</h3>
-                    <p>Paquete de films plásticos para UV.</p>
-                    <a href="https://wa.me/5492664485823?text=Consulta%20Laminas" class="btn-wsp">Consultar</a>
-                </div>
-            </div>
-            
-             <div class="card">
-                <div class="card-img"><img src="1000951574.jpg" alt="Cuchillas BTB"></div>
-                <div class="card-body">
-                    <h3>Cuchillas BTB WK6</h3>
-                    <p>Surtido de cuchillas manuales.</p>
-                    <a href="https://wa.me/5492664485823?text=Consulta%20WK6" class="btn-wsp">Consultar</a>
-                </div>
-            </div>
-            
-             <div class="card">
-                <div class="card-img"><img src="1000951598.jpg" alt="Espatula"></div>
-                <div class="card-body">
-                    <h3>Espátula Larga</h3>
-                    <p>Herramienta metálica de montaje.</p>
-                    <a href="https://wa.me/5492664485823?text=Consulta%20Espatula" class="btn-wsp">Consultar</a>
-                </div>
-            </div>
-            
-             <div class="card">
-                <div class="card-img"><img src="1000951573.jpg" alt="Clip WRD"></div>
-                <div class="card-body">
-                    <h3>Clip WRD</h3>
-                    <p>Accesorio para sistema de fibra.</p>
-                    <a href="https://wa.me/5492664485823?text=Consulta%20Clip" class="btn-wsp">Consultar</a>
-                </div>
-            </div>
-            
-             <div class="card">
-                <div class="card-img"><img src="1000951605.jpg" alt="Tubos UltraWiz"></div>
-                <div class="card-body">
-                    <h3>Tubos UltraWiz</h3>
-                    <p>Surtido de cuchillas en tubo.</p>
-                    <a href="https://wa.me/5492664485823?text=Consulta%20Tubos" class="btn-wsp">Consultar</a>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <a href="https://wa.me/5492664485823" class="float-wsp" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-</body>
-</html>
+                <img src="1000951603.jpg" alt="
