@@ -7,17 +7,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* --- ESTILOS BASE (Tema Oscuro Profesional) --- */
+        /* --- ESTILOS BASE --- */
         :root {
             --verde-manzana: #8CD600; 
-            --rojo-marca: #D92525;
             --negro-fondo: #111111;
-            --gris-oscuro: #1F1F1F;
             --gris-claro: #E0E0E0;
         }
 
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Segoe UI', sans-serif;
             margin: 0;
             padding: 0;
             background-color: var(--negro-fondo);
@@ -25,417 +23,144 @@
             padding-bottom: 80px;
         }
 
-        /* --- HEADER CON EFECTO BANDERAS --- */
+        /* --- HEADER --- */
         header {
-            background: linear-gradient(to right, #000 0%, #1a1a1a 100%);
-            padding: 30px 0;
+            background: #000;
+            padding: 40px 0;
             border-bottom: 4px solid var(--verde-manzana);
             text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.8);
         }
 
+        /* --- SOLUCIÓN DEL LOGO (COLORES POR CÓDIGO, NO IMAGEN) --- */
         .logo {
-            /* Tamaño y Fuente */
             font-size: 3rem; 
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 3px;
             display: inline-block;
             
-            /* EFECTO DE RECORTE (BANDERAS) */
-            /* Busca el archivo 'banderas.jpg' que debes subir */
-            background-image: url('banderas.jpg'); 
-            background-size: cover;
-            background-position: center;
+            /* FUSION DE BANDERAS: Celeste (Arg) -> Blanco -> Rojo (USA) -> Azul (USA) */
+            background: linear-gradient(90deg, #74ACDF 0%, #FFFFFF 35%, #B22234 65%, #3C3B6E 100%);
             
-            /* Magia para que la imagen se meta en el texto */
+            /* Hace que el color se meta DENTRO de las letras */
             -webkit-background-clip: text;
             background-clip: text;
-            color: transparent; /* Hace el texto invisible para ver el fondo */
+            color: transparent; 
             
-            /* Sombra blanca suave para que resalte en el fondo negro */
-            filter: drop-shadow(0 0 2px rgba(255,255,255,0.3));
+            /* Sombra para legibilidad */
+            filter: drop-shadow(0 2px 0px rgba(255,255,255,0.1));
         }
 
-        /* El "JB" también toma el efecto de las banderas */
-        .logo span {
-            color: inherit; 
-        }
-
-        /* --- CONTENEDOR CENTRAL (INFO EMPRESA) --- */
-        .container-central {
-            max-width: 1000px;
-            margin: 50px auto;
-            padding: 0 20px;
-            text-align: center;
-        }
-
-        .empresa-titulo {
-            color: var(--verde-manzana);
-            font-size: 2rem;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            display: inline-block;
-            border-bottom: 2px solid var(--rojo-marca);
-            padding-bottom: 5px;
-        }
-        .intro-text {
-            line-height: 1.8;
-            color: #ccc;
-            font-size: 1.1rem;
-            margin-bottom: 40px;
-        }
-
-        /* PANEL DE MARCAS */
-        .marcas-panel {
-            background-color: black;
-            border: 1px solid #333;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 40px;
-        }
-        .marcas-grid {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-        .marca-badge {
-            background-color: var(--gris-oscuro);
-            color: #ddd;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            border: 1px solid #444;
-            transition: 0.3s;
-        }
-        .marca-badge:hover {
-            border-color: var(--verde-manzana);
-            color: var(--verde-manzana);
-            transform: scale(1.05);
-        }
-
-        /* CAJA DESTACADA (CONTACTO) */
-        .destacado-box {
-            background-color: var(--gris-oscuro);
-            border: 1px solid #333;
-            border-radius: 10px;
-            padding: 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
-            text-align: left;
-        }
-        .box-col-servicios ul { list-style: none; padding: 0; margin: 0; }
-        .box-col-servicios li { margin-bottom: 10px; font-size: 1rem; }
-        .box-col-servicios i { color: var(--verde-manzana); margin-right: 10px; }
-        .box-title { color: white; font-weight: bold; margin-bottom: 15px; display: block; border-bottom: 1px solid #444; padding-bottom: 5px; font-size: 1.1rem;}
-
-        .box-col-centro {
-            text-align: center;
-            background: rgba(0,0,0,0.3);
-            padding: 15px 30px;
-            border-radius: 8px;
-            border: 1px solid #333;
-            flex-grow: 1;
-        }
-        .tel-item { display: block; font-size: 1.3rem; color: white; font-weight: bold; margin: 5px 0; }
-        .tel-item i { color: var(--verde-manzana); }
-
-        .box-col-mapa { text-align: right; }
-        .mapa-img {
-            width: 130px;
-            border-radius: 5px;
-            border: 2px solid #555;
-            transition: transform 0.3s;
-        }
-        .mapa-img:hover { transform: scale(1.1); border-color: var(--verde-manzana); }
-
-
-        /* --- SECCIÓN VIDEOS (Estilo Delicado) --- */
-        .seccion-videos {
-            background-color: #000;
-            padding: 50px 0;
-            margin: 60px 0;
-            border-top: 1px solid #222;
-            border-bottom: 1px solid #222;
-        }
-        .container-videos {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .titulo-videos {
-            text-align: center;
-            color: white;
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-        }
+        /* --- RESTO DEL DISEÑO --- */
+        .container-central { max-width: 1000px; margin: 40px auto; padding: 0 20px; text-align: center; }
+        
+        .empresa-titulo { color: var(--verde-manzana); border-bottom: 2px solid #555; display: inline-block; padding-bottom: 10px; margin-bottom: 20px;}
+        
+        .seccion-videos { background: #080808; padding: 40px 0; margin: 40px 0; border-top: 1px solid #333; border-bottom: 1px solid #333; }
+        
         .grid-videos-horizontal {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
-            gap: 30px;
+            display: flex;
+            flex-wrap: wrap;
             justify-content: center;
+            gap: 20px;
         }
+
+        /* ESTILO VIDEOS DELICADOS */
         .video-card {
             background: #111;
-            border-radius: 16px; /* Borde redondeado elegante */
+            border-radius: 16px;
             overflow: hidden;
             border: 1px solid #333;
-            transition: transform 0.3s;
-            max-width: 280px; /* Tamaño controlado */
-            margin: 0 auto;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            width: 100%;
+            max-width: 280px; /* Tamaño celular */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
-        .video-card:hover { transform: translateY(-5px); border-color: var(--verde-manzana); }
         
         video { width: 100%; display: block; }
+        .video-titulo { padding: 10px; text-align: center; color: var(--verde-manzana); font-weight: bold; }
+
+        /* --- CATALOGO --- */
+        .catalogo-section { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .grid-productos { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
         
-        .video-titulo {
-            padding: 12px;
-            text-align: center;
-            color: var(--verde-manzana);
-            font-weight: bold;
-            font-size: 0.95rem;
-        }
-
-        /* --- CATÁLOGO --- */
-        .catalogo-section {
-            max-width: 1400px;
-            margin: 0 auto 80px auto;
-            padding: 0 20px;
-        }
-        .cat-title {
-            text-align: center;
-            font-size: 2.5rem;
-            color: white;
-            text-transform: uppercase;
-            margin-bottom: 40px;
-        }
-        .cat-title span { color: var(--rojo-marca); }
-
-        .grid-productos {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            background-color: var(--gris-oscuro);
-            border: 1px solid #333;
-            border-radius: 8px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.2s;
-        }
-        .card:hover { transform: translateY(-5px); border-color: var(--verde-manzana); }
-
-        .card-img {
-            background: white;
-            height: 190px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px;
-            position: relative;
-        }
-        .card-img img { max-width: 100%; max-height: 100%; object-fit: contain; }
+        .card { background: #1a1a1a; border: 1px solid #333; border-radius: 8px; overflow: hidden; }
+        .card-img { height: 180px; background: white; display: flex; align-items: center; justify-content: center; }
+        .card-img img { max-width: 90%; max-height: 90%; object-fit: contain; }
         
-        .badge-new {
-            position: absolute;
-            top: 5px; right: 5px;
-            background: var(--rojo-marca);
-            color: white;
-            font-size: 0.7rem;
-            padding: 2px 6px;
-            border-radius: 3px;
-        }
-
-        .card-body {
-            padding: 15px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .card-body h3 { margin: 0 0 5px 0; font-size: 1rem; color: white; }
-        .card-body p { font-size: 0.85rem; color: #aaa; margin-bottom: 15px; line-height: 1.3; }
-        
-        .btn-wsp {
-            background: transparent;
-            border: 1px solid var(--verde-manzana);
-            color: var(--verde-manzana);
-            text-align: center;
-            padding: 8px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+        .card-body { padding: 15px; }
+        .card-body h3 { margin: 0 0 10px 0; color: white; font-size: 1rem; }
+        .btn-wsp { display: block; width: 100%; background: transparent; border: 1px solid var(--verde-manzana); color: var(--verde-manzana); text-align: center; padding: 8px; text-decoration: none; border-radius: 4px; box-sizing: border-box; }
         .btn-wsp:hover { background: var(--verde-manzana); color: black; }
 
-        /* --- BOTÓN FLOTANTE --- */
-        .float-wsp {
-            position: fixed;
-            width: 65px;
-            height: 65px;
-            bottom: 25px;
-            right: 25px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 35px;
-            box-shadow: 2px 2px 3px #999;
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: transform 0.3s;
-        }
-        .float-wsp:hover { transform: scale(1.1); }
-
-        /* --- RESPONSIVE --- */
-        @media (max-width: 800px) {
-            .destacado-box { flex-direction: column; text-align: center; }
-            .box-col-mapa { text-align: center; }
-            .logo { font-size: 2rem; } /* Ajuste tamaño logo en celular */
-        }
+        /* Icono flotante */
+        .float-wsp { position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background: #25d366; color: white; border-radius: 50px; font-size: 30px; display: flex; align-items: center; justify-content: center; box-shadow: 2px 2px 10px black; }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">TOOLS PRIME <span>JB</span></div>
+        <div class="logo">TOOLS PRIME JB</div>
     </header>
 
     <div class="container-central">
-        
-        <h2 class="empresa-titulo">Líderes en Tecnología Automotriz</h2>
-        <p class="intro-text">
-            En <strong>Tools Prime JB</strong>, proveemos las herramientas más avanzadas del mercado para la reparación y sustitución de parabrisas. Representamos marcas líderes como WRD, GlasWeld y Equalizer.
-        </p>
-
-        <div class="marcas-panel">
-            <span style="display:block; color:#666; font-size:0.8rem; margin-bottom:15px; letter-spacing:2px;">REPRESENTANTES OFICIALES</span>
-            <div class="marcas-grid">
-                <span class="marca-badge">WRD Glass Tools</span>
-                <span class="marca-badge">GlasWeld</span>
-                <span class="marca-badge">Delta Kits</span>
-                <span class="marca-badge">Equalizer</span>
-                <span class="marca-badge">UltraWiz</span>
-            </div>
-        </div>
-
-        <div class="destacado-box">
-            <div class="box-col-servicios">
-                <span class="box-title">Nuestros Servicios</span>
-                <ul>
-                    <li><i class="fas fa-check"></i> Herramientas Importadas</li>
-                    <li><i class="fas fa-check"></i> Insumos y Consumibles</li>
-                    <li><i class="fas fa-check"></i> Colocación de Parabrisas</li>
-                </ul>
-            </div>
-            <div class="box-col-centro">
-                <span class="box-title" style="border:none; color:var(--verde-manzana)">CONTACTO DIRECTO</span>
-                <span class="tel-item"><i class="fab fa-whatsapp"></i> 2664-485823</span>
-                <span class="tel-item"><i class="fab fa-whatsapp"></i> 2665-045062</span>
-            </div>
-            <div class="box-col-mapa">
-                <img src="1000951603.jpg" alt="Mapa pequeño" class="mapa-img">
-                <div style="font-size:0.7rem; color:var(--verde-manzana); margin-top:5px; text-align:center; font-weight:bold;">ENVÍOS AL PAÍS</div>
-            </div>
-        </div>
-
+        <h2 class="empresa-titulo">Tecnología Automotriz</h2>
+        <p style="color:#ccc;">Representantes Oficiales: WRD, GlasWeld, Equalizer.</p>
     </div>
 
     <div class="seccion-videos">
-        <div class="container-videos">
-            <h3 class="titulo-videos">Demostraciones en Video</h3>
-            <div class="grid-videos-horizontal">
-                
-                <div class="video-card">
-                    <video controls controlsList="nodownload"><source src="1000951601.mp4" type="video/mp4"></video>
-                    <div class="video-titulo">Sierra Milwaukee</div>
-                </div>
-                
-                <div class="video-card">
-                    <video controls controlsList="nodownload"><source src="1000951575.mp4" type="video/mp4"></video>
-                    <div class="video-titulo">WRD Bison Oferta</div>
-                </div>
-                
-                <div class="video-card">
-                    <video controls controlsList="nodownload"><source src="1000951617.mp4" type="video/mp4"></video>
-                    <div class="video-titulo">Sistema Spider 4</div>
-                </div>
-                
-                <div class="video-card">
-                    <video controls controlsList="nodownload"><source src="1000951583.mp4" type="video/mp4"></video>
-                    <div class="video-titulo">Delta Kits Promo</div>
-                </div>
-
+        <h3 style="text-align:center; color:white; margin-bottom:30px;">VIDEOS DEMOSTRATIVOS</h3>
+        <div class="grid-videos-horizontal">
+            
+            <div class="video-card">
+                <video controls><source src="1000951601.mp4" type="video/mp4"></video>
+                <div class="video-titulo">Sierra Milwaukee</div>
             </div>
+            
+            <div class="video-card">
+                <video controls><source src="1000951575.mp4" type="video/mp4"></video>
+                <div class="video-titulo">WRD Bison</div>
+            </div>
+
+            <div class="video-card">
+                <video controls><source src="1000951617.mp4" type="video/mp4"></video>
+                <div class="video-titulo">Spider 4</div>
+            </div>
+
         </div>
     </div>
 
     <div class="catalogo-section">
-        <h2 class="cat-title">Catálogo <span>Profesional</span></h2>
-        
+        <h2 style="text-align:center; color:white; margin-bottom:40px;">CATÁLOGO</h2>
         <div class="grid-productos">
             
             <div class="card">
-                <div class="card-img"><img src="1000951623.jpg" alt="WRD Spider 4"><span class="badge-new">TOP</span></div>
+                <div class="card-img"><img src="1000951623.jpg" alt="Producto"></div>
                 <div class="card-body">
                     <h3>WRD Spider 4 Kit</h3>
-                    <p>Sistema completo de extracción por fibra.</p>
-                    <a href="https://wa.me/5492664485823?text=Consulta%20Spider%204" class="btn-wsp">Consultar</a>
+                    <a href="https://wa.me/5492664485823" class="btn-wsp">Consultar</a>
                 </div>
             </div>
 
             <div class="card">
-                <div class="card-img"><img src="1000951619.jpg" alt="WRD Bison"></div>
+                <div class="card-img"><img src="1000951619.jpg" alt="Producto"></div>
                 <div class="card-body">
                     <h3>WRD Bison</h3>
-                    <p>Herramienta manual de corte por hilo.</p>
-                    <a href="https://wa.me/5492664485823?text=Consulta%20Bison" class="btn-wsp">Consultar</a>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-img"><img src="1000951602.jpg" alt="GlasWeld Zoom"><span class="badge-new">PRO</span></div>
-                <div class="card-body">
-                    <h3>Kit GlasWeld Zoom</h3>
-                    <p>Inyector al vacío, lámpara UV y maletín.</p>
-                    <a href="https://wa.me/5492664485823?text=Consulta%20Kit%20GlasWeld" class="btn-wsp">Consultar</a>
+                    <a href="https://wa.me/5492664485823" class="btn-wsp">Consultar</a>
                 </div>
             </div>
 
-            <div class="card">
-                <div class="card-img"><img src="1000951580.jpg" alt="Delta Kits"></div>
+             <div class="card">
+                <div class="card-img"><img src="1000951602.jpg" alt="Producto"></div>
                 <div class="card-body">
-                    <h3>Kit Delta Profesional</h3>
-                    <p>Sistema completo en bolso azul con puente.</p>
-                    <a href="https://wa.me/5492664485823?text=Consulta%20Kit%20Delta" class="btn-wsp">Consultar</a>
+                    <h3>Kit GlasWeld</h3>
+                    <a href="https://wa.me/5492664485823" class="btn-wsp">Consultar</a>
                 </div>
             </div>
 
         </div>
     </div>
 
-    <a href="https://wa.me/5492664485823" class="float-wsp" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <a href="https://wa.me/5492664485823" class="float-wsp"><i class="fab fa-whatsapp"></i></a>
 
 </body>
 </html>
